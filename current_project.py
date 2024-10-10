@@ -269,7 +269,9 @@ def get_all_data(user_id):
 
     return jsonify(user_data), 200
 
-
+@app.get('/')
+def index():
+    return jsonify({"Message": "Hello world"})
 
 
 if __name__ == '__main__':

@@ -241,6 +241,7 @@ def update_notes(user_id, title):
 
 @app.delete('/delete_data/<user_id>/<title>')
 @login_required
+
 def delete_data(user_id, title):
     delete = collection.update_one(
             {"_id": ObjectId(user_id)},
@@ -273,5 +274,6 @@ def get_all_data(user_id):
 def index():
     return jsonify({"Message": "Hello world"})
 
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=10000)
+    app.run(debug=True)
